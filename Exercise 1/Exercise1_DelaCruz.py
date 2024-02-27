@@ -4,7 +4,7 @@ Mika Patricia G. Dela Cruz
 2023-03941
 """
 
-print('Enter here: ')
+print('Enter decimal here: ')
 decimal = input()
 
 # degrees
@@ -20,3 +20,14 @@ sec = (round((float(min2)-float(min))*60,2))
 print( deg, "deg", min, "min" , sec, "sec") 
 
 #NEXT
+
+print('For DMS, Enter deg here:  ')
+deg1 = input()
+
+print('For DMS, Enter min here:  ')
+min1 = input()
+
+print('For DMS, Enter sec here:  ')
+sec1 = input()
+
+print(round((float(deg1) + (float(min1)/ 60) + (float(sec1)/3600)),3))
