@@ -17,7 +17,7 @@ min2 = ((float(decimal)-float(deg))*60)
 #seconds
 sec = (round((float(min2)-float(min))*60,2))
 
-print( deg, "deg", min, "min" , sec, "sec") 
+print( deg, "-", min, "-" , sec, "-") 
 
 #NEXT
 
