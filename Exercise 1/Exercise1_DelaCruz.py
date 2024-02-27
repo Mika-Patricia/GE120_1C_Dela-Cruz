@@ -6,23 +6,17 @@ Mika Patricia G. Dela Cruz
 
 print('Enter here: ')
 decimal = input()
-print(decimal)
 
 # degrees
-print(int(float(decimal)//1))
-
 deg = (int(float(decimal)//1))
 
 # minutes
 min = (int(((float(decimal)-float(deg))*60)//1))
-
-print(min)
-
 min2 = ((float(decimal)-float(deg))*60)
 
 #seconds
+sec = (round((float(min2)-float(min))*60,2))
 
-sec = (round(float(min2)-float(min))*60)
+print( deg, "deg", min, "min" , sec, "sec") 
 
-print(round(sec,2))
-
+#NEXT
