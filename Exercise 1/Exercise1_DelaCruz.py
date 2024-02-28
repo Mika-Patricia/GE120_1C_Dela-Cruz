@@ -3,7 +3,10 @@ GE 120: Intro to OOP Geomatic Application
 Mika Patricia G. Dela Cruz 
 2023-03941
 """
+#intro
+print("")
 print("Welcome! This is a Decimal to Degree-Minute-Second Converter and vise versa.")
+print("")
 
 #DECIMAL to DMS
 
@@ -25,10 +28,11 @@ sec = (round((float(min2)-float(min))*60,2))
 print("Here is ",decimal, "in DegMinSec: ")
 print(deg,"-",min,"-",sec) 
 
+print("")
 #DMS to DECIMAL
 
 #input
-print('For Enter DMS (XX-XX-XX.xx) here:  ')
+print('Enter DMS (XX-XX-XX.xx) here:  ')
 DMS = input()
 
 #split
