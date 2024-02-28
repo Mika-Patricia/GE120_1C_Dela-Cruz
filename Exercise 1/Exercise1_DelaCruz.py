@@ -3,6 +3,7 @@ GE 120: Intro to OOP Geomatic Application
 Mika Patricia G. Dela Cruz 
 2023-03941
 """
+print("Welcome! This is a Decimal to Degree-Minute-Second Converter and vise versa.")
 
 #DECIMAL to DMS
 
