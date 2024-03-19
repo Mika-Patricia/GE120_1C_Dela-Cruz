@@ -3,16 +3,20 @@ import math
 
 #variables
 i=0
-dist = 0
 azi = 0
 yesorno = ("y", "n")
-table_data = []
-Lat = []
-Dep = []
+table1_data = []
+table2_data =[]
+SumLat = 0
+SumDep = 0
+sumdist = 0
 distance =[]
+clat = []
+concorlat = []
+concordep = []
 
 def getLat(dist,azi):
-  lat = (-dist* math.cos(math.radians(DMS(azi))))
+  lat = float(-dist* math.cos(math.radians(DMS(azi))))
   return  lat
 
 def getDep(dist,azi):
@@ -71,7 +75,6 @@ def bearingDEC(azi):
 
 def AzimuthToBearing(bearingDEC):
   
-
   deg = (int((bearingDEC(azi)[1]))//1)
   min = (int((float(bearingDEC(azi)[1])-float(deg))*60)//1) #minutes (formula); this is without the decimals
   min2 = ((float(bearingDEC(azi)[1])-float(deg))*60) #this is with the decimals which will be used in computing for seconds
@@ -82,13 +85,25 @@ def AzimuthToBearing(bearingDEC):
 
   return bearing2
 
-def LEC(Lat,Dep):
-  LEC = math.sqrt((sum(Lat)**2)+(sum(Dep)**2))
+def LEC(SumLat,SumDep):
+  LEC = math.sqrt(((SumLat)**2)+((SumDep)**2))
   return LEC
   
 def REC(Lat,Dep):
-  REC_denom = sum(distance)/LEC(Lat,Dep)
+  REC_denom = sumdist/LEC(Lat,Dep)
   return REC_denom
+
+def getClat(dist ):
+  clat = dist, concorlat1[0]
+  return clat
+
+def getCdep (dist):
+  cdep = dist,concordep1[0]
+  return cdep
+
+def getAdjLat (dist, azi):
+  adjlat = getLat(dist, azi) #+ getClat(dist)
+  return adjlat
 
 
 
@@ -102,12 +117,19 @@ while True:
   dist = (float(input("Enter Distance in meters (XXX.xxx): "))) #Gets the distance from the user
   azi = (input("Enter Azimuth from South (XXX.xxx): "))  #Gets the azimuth from south from the user
   
-  Lat.append(getLat(dist,azi))
-  Dep.append(getDep(dist,azi))
-  distance.append(dist)
+  latitude = getLat(dist, azi)
+  departure = getDep(dist,azi)
+  
+  SumLat += latitude
+  SumDep += departure
+  sumdist += dist
 
-  header = ["Line", "Distance", "Bearing", "Latitude", "Departure"] #name of table header
-  table_data.append([line, dist, AzimuthToBearing(bearingDEC), getLat(dist,azi), getDep(dist,azi)]) #to add new lines to the data
+  
+
+  header1 = ["Line", "Distance", "Bearing", "Latitude", "Departure"] #name of table header
+  table1_data.append([line, dist, AzimuthToBearing(bearingDEC), getLat(dist,azi), getDep(dist,azi)]) #to add new lines to the data
+  header2 = ["Line", "Clat", "Cdep", "Adj Lat"]
+  table2_data.append([line, getClat(dist), getCdep(dist), getAdjLat(dist, azi)])
 
 
   print("Add a new LINE? [y/n]"); choice = str(input())
@@ -118,15 +140,21 @@ while True:
   elif choice.lower() != yesorno : #if neither "n" or "y", invalid. line will end.
     print("answer not yes[y] or no[n]. Line will end.")
     break
-  
+
+concorlat1 = [concorlat.append(-SumLat/sumdist)]
+concordep1 = [concordep.append(-SumDep/sumdist)]
+
 #output
 print("---------------------------------")
 print("Summary")
 
 #prints the table
-table = tabulate(table_data, header, tablefmt="fancy_grid")
-print(table)
+table1= tabulate(table1_data, header1, tablefmt="fancy_grid")
+table2 = tabulate(table2_data, header2,tablefmt = "fancy_grid" )
+print(table1)
+print (table2)
 
-print("The LEC is ",round(LEC(Lat,Dep),3))
-print("The REC is 1:",round(REC(Lat,Dep),-3))
+print("The LEC is ",round(LEC(SumLat,SumDep),3))
+print("The REC is 1:",round(REC(SumLat,SumDep),-3))
+
 
