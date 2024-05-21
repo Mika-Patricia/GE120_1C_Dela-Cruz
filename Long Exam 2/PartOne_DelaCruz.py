@@ -14,7 +14,7 @@ maybe for programmers it is fun and enjoyable but for an ordinary person, they w
 they want things to be easy. And GUI provides just that. Moreover, specifically in geomatics, it helps us 
 visualize more the problems we are solving. For example, the app project we are making is about a traverse plotter.
 Students have a difficult time visualizing the plot of traverse but using programming and with GUI, we can help
-make thing easier.
+make things easier.
 
 3. Operation Overloading is using operations to overload a function. It is redefining a code using an operation.
 For example to overload the print function wit certain texts, or to oveload the + operator with to return a certain
@@ -22,13 +22,12 @@ set of text.
 
 4.Inheritance is having a superclass and then a derived class from it. It follows the attributes it has. 
 One good example is inherting from our parents. Using code, we can do this by making a class named Parents
-then another Child. And the child can get characteristics from the Parent.
+then another Child. And the child can get characteristics from the Parent such as money, looks, etc.
 
 5. Front-end is what the users see. The Back-end is the one who makes the output. And Database it the storage for
-that output. For example in the production of goods. The commercials with the models and celebrities represents 
-the front-end. It is what the buyers see. The Back-end are the manufacturers, the factory workers, who create the 
-product or goods, say a shampoo. Then these products are stored in either a warehouse or shelves that serve as the
-database.
-
+that output. For example in the production of goods. The commercials, posters, and promotions with the models and 
+celebrities represents the front-end. It is what the buyers see. The Back-end are the manufacturers, the factory
+ workers, who create the  product or goods, say a shampoo. Then these products are stored in either a warehouse
+ or shelves that serve as the database.
 
 """
