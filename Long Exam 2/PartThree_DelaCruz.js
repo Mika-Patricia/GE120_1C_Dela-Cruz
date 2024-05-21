@@ -19,7 +19,7 @@ export default function App() {
       Compute for the numerical values in converting azimuth to bearing.*/
 
         
-      if (inputCase == "1") {
+      if (inputCase == "2") {
         var degrees = Math.floor(value)
         var minutes = Math.floor((value-degrees)*60)
         var seconds = Math.round((value-degrees-(minutes/60))*3600)
@@ -28,7 +28,7 @@ export default function App() {
 
         setOutputValue(output)
       }
-      else {
+      if (inputCase == "1"){
         var elements = value.split("-")
         var output = parseFloat(elements[0]) + parseFloat(elements[1])/60 + parseFloat(elements [2])/3600
         setOutputValue(output)
@@ -166,3 +166,11 @@ const styles = StyleSheet.create({
     color: 'black'
   }
 });
+
+/* THE LAYOUT
+
+The title will be on top, followed by the text field to type the given Azimuth by the user. Then 
+just below it is the button that can be pressed which converts the input azimuth into bearing in DMS. 
+And most importantly, the text that shows the Output. And for the negative space left, a picture would
+be nice to place. But since we are not allowed to access the internet, I will only put the code as if
+there is an image indeed.*/

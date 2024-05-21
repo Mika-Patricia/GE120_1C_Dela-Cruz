@@ -47,7 +47,7 @@ class Riparian(Parcel):
 
 print("A Parcel of Land Owned by" , Parcel(owner) , "with an area of", Parcel(area), "square meters") 
 
-SUM = Parcel (area) + Riparian (area2) #Get sum
+SUM = Parcel(area) + Riparian (area2) #Get sum
 print("Consolidation lot of" , Parcel(owner) , "and"+ Riparian(owner) , " with  a total area of", SUM , " square meters")
 
 
