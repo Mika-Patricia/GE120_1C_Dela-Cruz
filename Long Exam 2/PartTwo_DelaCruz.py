@@ -15,9 +15,9 @@ class Parcel:
 
        if area < 10000: 
             Classification = "residential"
-       elif area > 100000 and area < 1200000:
+       elif area > 10000 and area < 120000:
             Classification = "Private agricultural"
-       elif area > 1200000 :
+       elif area > 120000 :
             Classification = "Public Agricultural"
        else:
             Classification = "EWAN KO"
