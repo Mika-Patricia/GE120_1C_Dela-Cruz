@@ -4,7 +4,7 @@ import { Image } from 'react-native';//import from react native
 import { Picker } from '@react-native-picker/picker';//import from react native
 import { StatusBar } from 'expo-status-bar';//import from react native
 import { StyleSheet, Text, TextInput, View, Button } from 'react-native'; //components
-import download from './Picture/download.jpg' ;
+import jett from './jett.jpg' ;
 
 export default function App() {
 
@@ -81,7 +81,7 @@ export default function App() {
       <View style={styles.box4}>
         <Image
           style={styles.image}
-          source={download}
+          source={jett}
           placeholder={blurhash}
           contentFit="cover"
           transition={1000}
